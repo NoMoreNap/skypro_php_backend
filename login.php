@@ -3,7 +3,7 @@ header('Access-Control-Allow-Origin: *');
 require_once 'database.php';
 
 $login = $_POST['login'];
-$pass = $_POST['pass'];
+$pass = md5($_POST['pass']);
 
 $isLogin = Database::search_query($login,$pass);
 
@@ -14,5 +14,6 @@ if ($isLogin) {
 }
 else {
     $responce = array('res' => false);
+    http_response_code(401);
     echo json_encode($responce);
 }

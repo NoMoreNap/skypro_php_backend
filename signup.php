@@ -3,9 +3,8 @@ header('Access-Control-Allow-Origin: *');
 require_once 'database.php';
 
 $login = $_POST['login'];
-$pass = $_POST['pass'];
+$pass = md5($_POST['pass']);
 $token = md5($login.$pass.(time() - rand(0,9999999)));
-
 $insert = Database::new_user($login,$pass,$token);
 if ($insert) {
     $response = array('res'=>true,'token'=>$token);
