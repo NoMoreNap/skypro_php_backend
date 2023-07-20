@@ -38,6 +38,13 @@ class database {
         $data = mysqli_fetch_all($result,1);
         return boolval($data);
     }
+    static function check_token($token) {
+        $connect = mysqli_connect(self::$host, self::$login,self::$pass,self::$db);
+        $req = "SELECT `token` FROM `user_data` WHERE `token` = '$token'";
+        $result = mysqli_query($connect,$req);
+        $data = mysqli_fetch_all($result,1);
+        return boolval($data);
+    }
 }
 
 $Database = new database();
