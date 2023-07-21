@@ -54,7 +54,7 @@ responce on success:
       "id": "string",
       "url": "string" },
   
-    {} // and more, if u get all tracks
+    {}
 ]
 ```
 responce on error:
