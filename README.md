@@ -34,8 +34,8 @@ fetch('https://bayonetta.ru/user/login.php ', {
 
 | Описание запроса| Пример| 
 | ------------- |:------------------:| 
-| _Получить все треки_    |  GET - http://bayonetta.ru/track/all.php?<token>   | 
-| _Получить трек по id_   | GET - http://bayonetta.ru/track/index.php?id=<id>&token=<token> |
+| _Получить все треки_    |  GET - http://bayonetta.ru/track/all.php?{token}/   | 
+| _Получить трек по id_   | GET - http://bayonetta.ru/track/index.php?id={id}&token={token}/ |
 
 responce on success:
 ```json
