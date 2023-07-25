@@ -2,9 +2,9 @@
 header('Access-Control-Allow-Origin: *');
 class database {
     static $host = 'localhost';
-    static $login = 'root';
-    static $pass = '123';
-    static $db = 'skypro';
+    static  $login = '';
+    static $pass = '';
+    static $db = '';
     static function search_query($log,$pass) {
         $connect = mysqli_connect(self::$host, self::$login,self::$pass,self::$db);
         $req = "SELECT `login`, `pass` FROM `user_data` WHERE `login` = '$log' and `pass` = '$pass'";
@@ -17,15 +17,12 @@ class database {
         if ( self::check_user($log)) {
             return 0;
         }
-
         $req = "INSERT INTO `user_data`( `login`, `pass`, `token`) VALUES ('$log','$pass','$token')";
-
         $result = mysqli_query($connect,$req);
         return $result;
     }
     static function get_token($log,$pass) {
         $connect = mysqli_connect(self::$host, self::$login,self::$pass,self::$db);
-
         $req = "SELECT `token` FROM `user_data` WHERE `login` = '$log' and `pass` = '$pass'";
         $result = mysqli_query($connect,$req);
         $data = mysqli_fetch_all($result,1);
