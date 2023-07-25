@@ -22,7 +22,7 @@ fetch('https://bayonetta.ru/user/login.php ', {
 ```
 ```js
 // GET
-fetch('https://bayonetta.ru/track/index.php?id=<id>&token=<token>'})
+fetch('https://bayonetta.ru/track/index.php?id={id}&token={token}'})
 ```
 #### Ручки:
 1. Пользователи
@@ -37,14 +37,14 @@ fetch('https://bayonetta.ru/track/index.php?id=<id>&token=<token>'})
 
 | Описание запроса               |                                 Пример                                  | 
 |--------------------------------|:-----------------------------------------------------------------------:| 
-| _Получить все треки_           |            GET - https://bayonetta.ru/track/all.php?<token>             | 
-| _Получить треки по id_         |    GET - https://bayonetta.ru/track/index.php?id=<id>&token=<token>     |
-| _Добавить трек в избранное_    | POST - https://bayonetta.ru/track/favorite.php?token=<token>&action=add |
+| _Получить все треки_           |            GET - https://bayonetta.ru/track/all.php?{token}             | 
+| _Получить треки по id_         |    GET - https://bayonetta.ru/track/index.php?id={id}&token={token}     |
+| _Добавить трек в избранное_    | POST - https://bayonetta.ru/track/favorite.php?token={token}&action=add |
 | body                           |                              id: id трека                               |
-| _Получить избранные треки_     | GET - https://bayonetta.ru/track/favorite.php?token=<token>&action=get  |
-| _Удалить трек из избранного_   | POST - https://bayonetta.ru/track/favorite.php?token=<token>&action=del |
+| _Получить избранные треки_     | GET - https://bayonetta.ru/track/favorite.php?token={token}&action=get  |
+| _Удалить трек из избранного_   | POST - https://bayonetta.ru/track/favorite.php?token={token}&action=del |
 | body                           |                              id: id трека                               |
-| _Получить сортированные треки_ | GET - https://bayonetta.ru/track/favorite.php?token=<token>&action=rand |
+| _Получить сортированные треки_ | GET - https://bayonetta.ru/track/favorite.php?token={token}&action=rand |
 
 #### Ответы:
 
